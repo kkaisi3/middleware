@@ -29,5 +29,12 @@ namespace Adventure.Controllers
             return Ok(AdventurerService.ReadAdventurers());
             
         }
+
+        [HttpPost]
+        public IActionResult Addadvenurers(Adventurer adventure)
+        {
+            return CreatedAtAction(AdventurerService.addAdventurers());
+
+        }
     }
 }

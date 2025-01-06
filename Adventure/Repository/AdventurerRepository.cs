@@ -4,6 +4,7 @@ namespace Adventure.Repository
 {
     public interface IAdventurerRepository
     {
+        void AddAdventurers(Adventurer adventurer);
         public List<Adventurer> ReadAdventurers();
     }
     public class AdventurerRepository : IAdventurerRepository
@@ -22,5 +23,13 @@ namespace Adventure.Repository
             return test;
             return _db.Adventurers.ToList();
         }
+         public void AddAdventurers(Adventurer adventurer)
+        {
+           _db.Adventurers.Add(adventurer);
+            
+        }
+
     }
+
+
 }

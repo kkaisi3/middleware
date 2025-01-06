@@ -6,6 +6,7 @@ namespace Adventure.Services
     public interface IAdventurerService
     {
         public List<Adventurer> ReadAdventurers();
+        public Adventurer addAdventurers(Adventurer adventurer);
     }
     public class AdventurerService : IAdventurerService
     {
@@ -19,6 +20,11 @@ namespace Adventure.Services
         public List<Adventurer> ReadAdventurers()
         {
             return _repository.ReadAdventurers();
+        }
+
+        public Adventurer addAdventurers(Adventurer adventurer)
+        {
+            return _repository.AddAdventurers(adventurer);
         }
     }
 }
